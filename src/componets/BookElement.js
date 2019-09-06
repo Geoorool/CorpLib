@@ -41,7 +41,7 @@ class BookElement extends Component {
                         }}>
                         <CardMedia 
                         className={classes.media}
-                        image={require(`${book.imgSrc}`)}
+                        image={require(`../../img${book.imgSrc}`)}
                         title={book.title}
                         />
                         <CardContent>

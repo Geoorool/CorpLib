@@ -2,11 +2,23 @@ import React, {Component} from 'react';
 import BookList from './componets/BookList';
 import Book from './componets/Book';
 import Header from './componets/Header';
-import {books} from './fixtures'
+//import {books} from './fixtures'
 
 class MainContent extends Component{  
-  render(){
+  state ={
+    data: []
+  }
 
+  componentDidMount() {
+    fetch('http://localhost:8080/books/')
+    .then(response => response.json())
+    .then(jsonData => this.setState({data: jsonData}))
+          
+  }
+
+  render(){
+    const books = this.state.data;
+    
     switch(this.props.router){
       case 'bookList':
         return(<BookList books = {books} updateData = {this.props.updateData}/>)

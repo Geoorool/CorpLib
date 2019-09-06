@@ -36,7 +36,8 @@ class Book extends Component{
           <Grid container spacing={2}>
             <Grid item>
               <ButtonBase className={classes.image}>
-                <img className={classes.img} alt="complex" src={require(`${book.imgSrc}`)} />
+                {/* <img className={classes.img} alt="complex" src={require(`${book.imgSrc}`)} /> */}
+                <img className={classes.img} alt="complex" src={require(`../../img${book.imgSrc}`)} />
               </ButtonBase>
             </Grid>
             <Grid item xs={12} sm container>
